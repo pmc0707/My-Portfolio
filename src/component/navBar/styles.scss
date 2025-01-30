@@ -6,22 +6,31 @@
     align-items: center;
     font-size: 1.2rem;
 
-    &__conatiner{
+    &__container{
         display: flex;
         align-items: center;
         width: 100%;
         height: inherit;
         padding: 0px 20px;
-
+        flex: 1;
         &__logo{
-            color: var(--yellow-theme-backgroung-color);
+            color: var(--yellow-theme-main-color);
             cursor: pointer;
         }
 
-        &__menu {
-           display: flex;
+        &__menu{
+            display: flex;
             list-style: none;
             text-align: center;
+        
+        &__item{
+            line-height: 40px;
+            margin-right: 1.5rem;
+            font-size: 1.6rem;
+        }
         }
     }
+}
+.nav-icon{
+    display: none;
 }

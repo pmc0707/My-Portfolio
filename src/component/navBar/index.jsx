@@ -40,11 +40,11 @@ const NavBar=()=> {
                         <FaReact size={30} />
                     </Link>
                 </div>
-                <ul className='navbar__conatiner__menu__item'>
+                <ul className='navbar__container__menu'>
                     {
                         data.map((item, key) => (
-                            <li key={key} className='navbar__conatiner__menu__item'>
-                            <Link className='navbar__conatiner__menu__item__links' to={item.to}>
+                            <li key={key} className='navbar__container__menu__item'>
+                            <Link className='navbar__container__menu__item__links' to={item.to}>
                                 {item.label}
                             </Link>
                         </li>
