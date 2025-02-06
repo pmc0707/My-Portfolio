@@ -64,11 +64,17 @@
         top: 80px;
         left: -110px;
         opacity: all 0.5s ease;
+
+        &.active{
+            background: #181818;
+            left: 0px;
+            opacity: 1;
+        }
     }
     .nav-icon{
         display: block;
         cursor: pointer;
         color: var(--yellow-theme-main-color);
-        // padding: ;
+        padding-right:20px ;
     }
 }

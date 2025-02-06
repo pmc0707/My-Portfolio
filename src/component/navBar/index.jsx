@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars,FaReact } from 'react-icons/fa';
+import { FaBars, FaReact } from 'react-icons/fa';
 import { HiX } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import './styles.scss'
@@ -27,9 +27,9 @@ const data = [
         to: '/contact'
     }
 ]
-const NavBar=()=> {
-    const [toggleIcon,setToggleIcon] = useState(false)
-    const handelToggleIcon = () =>{
+const NavBar = () => {
+    const [toggleIcon, setToggleIcon] = useState(false)
+    const handelToggleIcon = () => {
         setToggleIcon(!toggleIcon);
     }
     return (
@@ -40,20 +40,20 @@ const NavBar=()=> {
                         <FaReact size={30} />
                     </Link>
                 </div>
-                <ul className='navbar__container__menu'>
+                <ul className={`navbar__container__menu${toggleIcon ? 'active' : ''}`}>
                     {
                         data.map((item, key) => (
                             <li key={key} className='navbar__container__menu__item'>
-                            <Link className='navbar__container__menu__item__links' to={item.to}>
-                                {item.label}
-                            </Link>
-                        </li>
+                                <Link className='navbar__container__menu__item__links' to={item.to}>
+                                    {item.label}
+                                </Link>
+                            </li>
                         ))
                     }
                 </ul>
                 <div className='nav-icon' onClick={handelToggleIcon}>
                     {
-                        toggleIcon ? <HiX size={30}/> :<FaBars size={30}/>
+                        toggleIcon ? <HiX size={30} /> : <FaBars size={30} />
                     }
                 </div>
             </nav>
