@@ -1,32 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-  :root{
-    --yellow-theme-backgroung-color : #1d1d1d;
-    --yellow-theme-main-color : #ffdd40;
-    --yellow-theme-backgroung-color : #ffffff;
-    --yellow-theme-backgroung-color : #181818;
-
-}
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-}
-
-html{
-    font-size: 62.5%;
-    height: 100%;
-}
-
-body{
-    background-color: var(--yellow-theme-backgroung-color);
-    height: 100%;
-}
-
-#root{
-    height: 100%;
-    
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+body {
+  margin: 0;
+  font-family: "Raleway", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
 }

@@ -1,26 +1,49 @@
-import './App.css';
-import {Routes, Route} from 'react-router-dom';
-import Home from './container/home';
-import About from './container/about';
-import Contact from './container/contact';
-import Portfolio from './container/portfolio';
-import Resume from './container/resume';
-import Skills from './container/skills';
-import NavBar from './component/navBar';
-function App() {
-  return (
-      <div className='App'>
+import React, { useState, useEffect } from "react";
+import Preloader from "../src/components/Pre";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer";
+import Resume from "./components/Resume/ResumeNew";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import "./style.css";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-        <NavBar/>
-      <Routes>
-        <Route index path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/portfolio' element={<Portfolio/>}/>
-        <Route path='/resume' element={<Resume/>}/>
-        <Route path='/skills' element={<Skills/>}/>
-      </Routes>
+function App() {
+  const [load, upadateLoad] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      upadateLoad(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Router>
+      <Preloader load={load} />
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="*" element={<Navigate to="/"/>} />
+        </Routes>
+        <Footer />
       </div>
+    </Router>
   );
 }
 
